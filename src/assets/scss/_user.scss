@@ -1,0 +1,52 @@
+// === Dark Mode Primary Color Customization ===
+
+[data-bs-theme='dark'] {
+  --bs-primary: #254999 !important;
+  // --bs-primary-rgb:rgba(37,73,153,255) !important;
+  --bs-link-hover-color: #254999!important;
+  --bs-link-color: #254999;
+  --bs-link-color-rgb: 255, 159, 54 !important;
+  --bs-link-hover-color-rgb: 231, 137, 23 !important;
+
+  .btn-primary {
+    --bs-btn-bg: var(--#{$prefix}primary);
+    --bs-btn-border-color: var(--#{$prefix}primary);
+    --bs-btn-hover-bg: var(--#{$prefix}link-hover-color);
+    --bs-btn-hover-border-color: var(--#{$prefix}link-hover-color);
+    --bs-btn-active-bg: var(--#{$prefix}link-hover-color);
+    --bs-btn-active-border-color: var(--#{$prefix}link-hover-color);
+    --bs-btn-disabled-bg: var(--#{$prefix}primary);
+  }
+
+  .btn-link {
+    --bs-link-color: var(--#{$prefix}primary);
+    --bs-btn-hover-color: var(--#{$prefix}link-hover-color);
+    --bs-btn-active-color: var(--#{$prefix}link-hover-color);
+  }
+
+  .btn-outline-primary {
+    --bs-btn-color: var(--#{$prefix}primary);
+    --bs-btn-border-color: var(--#{$prefix}primary);
+    --bs-btn-hover-bg: var(--#{$prefix}primary);
+    --bs-btn-hover-border-color: var(--#{$prefix}primary);
+    --bs-btn-active-bg: var(--#{$prefix}primary);
+    --bs-btn-active-border-color: var(--#{$prefix}primary);
+    --bs-btn-disabled-color: var(--#{$prefix}primary);
+    --bs-btn-disabled-border-color: var(--#{$prefix}primary);
+  }
+
+  .btn-primary-soft {
+    color: var(--#{$prefix}primary);
+    background-color: rgba(var(--#{$prefix}primary-rgb), 0.1);
+    &:hover,
+    &:focus {
+      color: $white;
+      background-color: var(--#{$prefix}primary);
+      border-color: var(--#{$prefix}primary);
+    }
+  }
+
+  .fill-primary {
+    fill: var(--#{$prefix}primary) !important;
+  }
+}
