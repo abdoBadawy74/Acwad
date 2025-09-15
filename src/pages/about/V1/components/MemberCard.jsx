@@ -7,14 +7,16 @@ const MemberCard = ({
   const {
     image,
     name,
-    role
+    position,
+    description
   } = member;
   return <Card className="card-body card-hover-shadow bg-transparent text-center p-4">
       <div className="avatar avatar-xxl mx-auto flex-shrink-0 mb-3">
         <img className="avatar-img rounded-circle" src={image} alt="avatar" />
       </div>
       <h6 className="mb-1"><Link to="">{name}</Link></h6>
-      <small>{role}</small>
+      <small>{position}</small>
+      <p className="small text-muted mb-0">{description}</p>
       <ul className="list-inline mb-0 mt-3 flex-centered gap-1">
         <li className="list-inline-item"> <Link className="btn btn-xs btn-icon btn-light" to=""><FaFacebookF className="fa-fw lh-base" /></Link> </li>
         <li className="list-inline-item"> <Link className="btn btn-xs btn-icon btn-light" to=""><FaInstagram className="fa-fw lh-base" /></Link> </li>

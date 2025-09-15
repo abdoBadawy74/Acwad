@@ -1,7 +1,19 @@
 import { Col, Container, Row } from "react-bootstrap";
-import { services } from "@/pages/demos/ClassicDefault/data";
+// import { services } from "@/pages/demos/ClassicDefault/data";
 import ServiceCard from "@/pages/demos/ClassicDefault/components/ServiceCard";
+import { useEffect, useState } from "react";
+import { SERVICES } from "@/Api/Api";
+
 const Services = () => {
+
+  const [services, setServices] = useState();
+  useEffect(() => {
+    fetch(SERVICES).then(res => res.json()).then(data => setServices(data.data));
+  }, []);
+  // console.log(services);
+
+
+
   return <section className="bg-dark position-relative overflow-hidden" data-bs-theme="dark">
 
     <figure className="position-absolute top-0 end-0 me-n9 mt-n7 d-none d-md-block">
@@ -31,7 +43,7 @@ const Services = () => {
       </div>
 
       <Row className="row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 gy-5 gy-md-7 mt-3">
-        {services.map((service, idx) => <Col key={idx}>
+        {services?.map((service, idx) => <Col key={idx}>
           <ServiceCard service={service} />
         </Col>)}
       </Row>
